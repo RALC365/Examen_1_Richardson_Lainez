@@ -1,0 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package examen1_richardson_lainez;
+
+/**
+ *
+ * @author RALC
+ */
+public class Objetos_hogar extends Objetos{
+    public String tiempo_vida;
+    public String area_casa;
+    public String instrucciones_armado;
+    public String fecha_compra;
+
+    public Objetos_hogar() {
+        super();
+    }
+
+    public Objetos_hogar(String tiempo_vida, String area_casa, String instrucciones_armado, String fecha_compra) {
+        this.tiempo_vida = tiempo_vida;
+        this.area_casa = area_casa;
+        this.instrucciones_armado = instrucciones_armado;
+        this.fecha_compra = fecha_compra;
+    }
+
+    public String getTiempo_vida() {
+        return tiempo_vida;
+    }
+
+    public void setTiempo_vida(String tiempo_vida) {
+        this.tiempo_vida = tiempo_vida;
+    }
+
+    public String getArea_casa() {
+        return area_casa;
+    }
+
+    public void setArea_casa(String area_casa) {
+        this.area_casa = area_casa;
+    }
+
+    public String getInstrucciones_armado() {
+        return instrucciones_armado;
+    }
+
+    public void setInstrucciones_armado(String instrucciones_armado) {
+        this.instrucciones_armado = instrucciones_armado;
+    }
+
+    public String getFecha_compra() {
+        return fecha_compra;
+    }
+
+    public void setFecha_compra(String fecha_compra) {
+        this.fecha_compra = fecha_compra;
+    }
+
+    @Override
+    public String toString() {
+        return "Objetos_hogar{" + "tiempo_vida=" + tiempo_vida + ", area_casa=" + area_casa + ", instrucciones_armado=" + instrucciones_armado + ", fecha_compra=" + fecha_compra + '}';
+    }
+    
+    
+    
+}
