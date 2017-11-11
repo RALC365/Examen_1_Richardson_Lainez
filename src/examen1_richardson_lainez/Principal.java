@@ -7,6 +7,7 @@ package examen1_richardson_lainez;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
@@ -26,6 +27,10 @@ static int cant_esposo=0;
 static ArrayList <Personas> personas = new ArrayList();
 static ArrayList <Familiares> familiares = new ArrayList();
 static ArrayList <Personal> personal = new ArrayList();
+static ArrayList <Objetos> objetos = new ArrayList();
+static ArrayList <Zapatos> zapatos = new ArrayList();
+static ArrayList <Ropa> ropa = new ArrayList();
+static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
 
     /**
      * Creates new form Principal
@@ -144,7 +149,7 @@ static ArrayList <Personal> personal = new ArrayList();
         jb_enviar_mensaje = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jb_mensajes_recibidos = new javax.swing.JComboBox<>();
+        cb_mensajes_recibidos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_mensajes = new javax.swing.JTable();
 
@@ -637,7 +642,11 @@ static ArrayList <Personal> personal = new ArrayList();
 
         jTabbedPane1.addTab("Añadir Objetos", AnadirObjetos);
 
-        cb_mensaje_personas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_mensaje_personas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_mensaje_personasItemStateChanged(evt);
+            }
+        });
 
         jLabel34.setText("Persona");
 
@@ -655,7 +664,7 @@ static ArrayList <Personal> personal = new ArrayList();
                         .addGap(144, 144, 144)
                         .addComponent(jLabel34)
                         .addGap(55, 55, 55)
-                        .addComponent(cb_mensaje_personas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cb_mensaje_personas, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(164, 164, 164)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -685,8 +694,6 @@ static ArrayList <Personal> personal = new ArrayList();
         jTabbedPane1.addTab("Enviar Mensaje", jPanel1);
 
         jLabel36.setText("Persona:");
-
-        jb_mensajes_recibidos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         table_mensajes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -725,7 +732,7 @@ static ArrayList <Personal> personal = new ArrayList();
                 .addGap(135, 135, 135)
                 .addComponent(jLabel36)
                 .addGap(97, 97, 97)
-                .addComponent(jb_mensajes_recibidos, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cb_mensajes_recibidos, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(119, Short.MAX_VALUE)
@@ -738,7 +745,7 @@ static ArrayList <Personal> personal = new ArrayList();
                 .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(jb_mensajes_recibidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_mensajes_recibidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(348, Short.MAX_VALUE))
@@ -770,6 +777,11 @@ static ArrayList <Personal> personal = new ArrayList();
         String horario_trabajo="";
         double tiempo_trabajando=0;//semanas
         double suelto=0;
+        
+        DefaultComboBoxModel modelo =
+                        (DefaultComboBoxModel) cb_mensaje_personas.getModel();
+                //modelo.addElement(x);//así lo inseetmoas directamente a la vista
+              //  cb_mensaje_personas.setModel(modelo);//esto algunas veces lo podemos omitir, solo que alguans versiones de java no lo hacen
         
         try {
             nombre = tf_nombre.getText();
@@ -832,6 +844,7 @@ static ArrayList <Personal> personal = new ArrayList();
                    peso = Integer.parseInt(tf_peso.getText());
                    personas.add(new Familiares(rol, trabajo, altura, peso, nombre, edad, id, sexo, estado_civil));
                    familiares.add(new Familiares(rol, trabajo, altura, peso, nombre, edad, id, sexo, estado_civil));
+                   modelo.addElement(new Familiares(rol, trabajo, altura, peso, nombre, edad, id, sexo, estado_civil));
                 }else{
                     JOptionPane.showMessageDialog(null, "Lo siento, el rol que elegiste ya está lleno");
                     verf = 0;
@@ -843,8 +856,11 @@ static ArrayList <Personal> personal = new ArrayList();
                 //suelto = Double.parseDouble(tf_)
                 personas.add(new Personal(ocupacion, horario_trabajo, tiempo_trabajando, suelto, nombre, edad, id, sexo, estado_civil));
                 personal.add(new Personal(ocupacion, horario_trabajo, tiempo_trabajando, suelto, nombre, edad, id, sexo, estado_civil));
+                modelo.addElement(new Personal(ocupacion, horario_trabajo, tiempo_trabajando, suelto, nombre, edad, id, sexo, estado_civil));
             }
-            
+            cb_mensaje_personas.setModel(modelo);
+            cb_dueno.setModel(modelo);
+            cb_mensajes_recibidos.setModel(modelo);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Ocurrio un error, no se guardaron los datos");
@@ -877,8 +893,35 @@ static ArrayList <Personal> personal = new ArrayList();
         String fecha_compra="";
         
         try {
-            
-            
+            color =  bt_color.getBackground();
+            descripcion = tf_descripcion.getText();
+            marca = tf_marca.getText();
+            tamano = Integer.parseInt(tf_tamano.getText());
+            calidad = jComboBox3.getSelectedIndex()+1;
+            precio = Double.parseDouble(tf_precio.getText());
+            dueño = (Personas)cb_dueno.getSelectedItem();
+            if (cb_tipo_objetos.getSelectedIndex() == 0) {
+                talla = tf_talla_zapatos.getText();
+                material = tf_material.getText();
+                //pais_elaboracion = jL_elaborado_pais.getName();
+                objetos.add(new Zapatos(talla, tipo_suela, confort, color, descripcion, marca, tamano, calidad, precio, dueño));
+                zapatos.add(new Zapatos(talla, tipo_suela, confort, color, descripcion, marca, tamano, calidad, precio, dueño));
+            }else if(cb_tipo_objetos.getSelectedIndex() == 1){
+                //ropa
+                talla2 = tf_talla_ropa.getText();
+                material = tf_material.getText();
+                pais_elaboracion = jL_elaborado_pais.getName();
+                objetos.add(new Ropa(talla, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, dueño));
+                ropa.add(new Ropa(talla, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, dueño));
+            }else{
+                //objetoshogar
+                tiempo_vida = tf_tiempo_vida.getText();
+                area_casa = jComboBox7.getName();
+                instrucciones_armado = tf_intrucciones.getText();
+                fecha_compra = jd_fecha.getDate()+"";
+                objetos.add(new Objetos_hogar(tiempo_vida, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, dueño));
+                objetos_hogar.add(new Objetos_hogar(tiempo_vida, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, dueño));
+            }
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Lo sentimos, pero los datos no se guardaron");
@@ -897,6 +940,17 @@ static ArrayList <Personal> personal = new ArrayList();
         
         
     }//GEN-LAST:event_bt_colorMouseClicked
+
+    private void cb_mensaje_personasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_mensaje_personasItemStateChanged
+        // TODO add your handling code here:
+        DefaultComboBoxModel modelo =
+                        (DefaultComboBoxModel) cb_mensaje_personas.getModel();
+                //modelo.addElement(x);//así lo inseetmoas directamente a la vista
+                cb_mensaje_personas.setModel(modelo);//esto algunas veces lo podemos omitir, solo que alguans versiones de java no lo hacen
+        
+        
+        
+    }//GEN-LAST:event_cb_mensaje_personasItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1080,6 +1134,7 @@ static ArrayList <Personal> personal = new ArrayList();
     private javax.swing.JComboBox<String> cb_confort;
     private javax.swing.JComboBox<String> cb_dueno;
     private javax.swing.JComboBox<String> cb_mensaje_personas;
+    private javax.swing.JComboBox<String> cb_mensajes_recibidos;
     private javax.swing.JComboBox<String> cb_rol;
     private javax.swing.JComboBox<String> cb_tipo_objetos;
     private javax.swing.JComboBox<String> cb_tipo_persona;
@@ -1130,7 +1185,6 @@ static ArrayList <Personal> personal = new ArrayList();
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_crear_objetos;
     private javax.swing.JButton jb_enviar_mensaje;
-    private javax.swing.JComboBox<String> jb_mensajes_recibidos;
     private com.toedter.calendar.JDateChooser jd_fecha;
     private javax.swing.JRadioButton rb_f;
     private javax.swing.JRadioButton rb_m;
