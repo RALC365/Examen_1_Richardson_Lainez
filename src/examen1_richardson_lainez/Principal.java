@@ -7,9 +7,11 @@ package examen1_richardson_lainez;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -151,7 +153,8 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
         jLabel36 = new javax.swing.JLabel();
         cb_mensajes_recibidos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_mensajes = new javax.swing.JTable();
+        tabla1 = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -653,6 +656,11 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
         jLabel35.setText("Mensaje:");
 
         jb_enviar_mensaje.setText("Enviar");
+        jb_enviar_mensaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_enviar_mensajeMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -695,7 +703,13 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
 
         jLabel36.setText("Persona:");
 
-        table_mensajes.setModel(new javax.swing.table.DefaultTableModel(
+        cb_mensajes_recibidos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_mensajes_recibidosItemStateChanged(evt);
+            }
+        });
+
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -722,7 +736,7 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(table_mensajes);
+        jScrollPane1.setViewportView(tabla1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -752,6 +766,19 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
         );
 
         jTabbedPane1.addTab("Mensajes Recibidos", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 683, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 567, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar", jPanel3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -951,6 +978,34 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
         
         
     }//GEN-LAST:event_cb_mensaje_personasItemStateChanged
+
+    private void jb_enviar_mensajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_enviar_mensajeMouseClicked
+        // TODO add your handling code here:
+        Personas p = (Personas) cb_mensaje_personas.getSelectedItem();
+        String mensaje = tf_mensaje_enviar.getText()+"";
+        mensaje = cifrado_cesar("cifrar", mensaje);
+        mensaje = cifrado_trasposicion(mensaje);
+        p.getMensajes().add(mensaje);
+        JOptionPane.showMessageDialog(null, "Su mensaje fue enviado con éxito");
+    }//GEN-LAST:event_jb_enviar_mensajeMouseClicked
+
+    private void cb_mensajes_recibidosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_mensajes_recibidosItemStateChanged
+        // TODO add your handling code here:
+                //esta validacion es para que no me agregue dos veces la misma cosa
+                //porque este expande y colapsa, con esta validacion  solo xolpsa creo
+                String s = ((Personas)cb_mensajes_recibidos.getSelectedItem()).getMensajes().get(0).toString();
+                Object [] newrow = {
+                    s
+                };
+                DefaultTableModel modelo =
+                        (DefaultTableModel) tabla1.getModel();
+                modelo.addRow(newrow);
+                tabla1.setModel(modelo);
+            
+        
+        
+        
+    }//GEN-LAST:event_cb_mensajes_recibidosItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1181,6 +1236,7 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_crear_objetos;
@@ -1188,7 +1244,7 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
     private com.toedter.calendar.JDateChooser jd_fecha;
     private javax.swing.JRadioButton rb_f;
     private javax.swing.JRadioButton rb_m;
-    private javax.swing.JTable table_mensajes;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTextField tf_altura;
     private javax.swing.JTextField tf_contra_r;
     private javax.swing.JTextField tf_contrasena;
