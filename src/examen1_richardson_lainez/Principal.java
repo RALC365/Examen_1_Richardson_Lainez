@@ -929,7 +929,7 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
             String temp = cb_tipo_persona.getSelectedItem().getClass().getName();
             int verf = 0;
             if (temp.equals("Familiares")) {
-                String temp1 =cb_rol.getSelectedItem().getClass().getName();
+                String temp1 =cb_rol.getSelectedItem().getClass().getSimpleName();
                 switch (temp1) {
                     case "Padre":
                         if(cant_padre < 1){
