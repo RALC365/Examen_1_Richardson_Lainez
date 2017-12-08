@@ -12,33 +12,35 @@ import java.awt.Color;
  * @author RALC
  */
 public class Ropa extends Objetos{
-    private String talla;
+    private int talla;
     private String material;
     private String pais_elaboracion;
 
     public Ropa() {
     }
 
-    public Ropa(String talla, String material, String pais_elaboracion) {
+    public Ropa(int talla, String material, String pais_elaboracion) {
         this.talla = talla;
         this.material = material;
         this.pais_elaboracion = pais_elaboracion;
     }
 
-    public Ropa(String talla, String material, String pais_elaboracion, String color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+    public Ropa(int talla, String material, String pais_elaboracion, String color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
         super(color, descripcion, marca, tamano, calidad, precio, dueño);
         this.talla = talla;
         this.material = material;
         this.pais_elaboracion = pais_elaboracion;
     }
 
-    public String getTalla() {
+    public int getTalla() {
         return talla;
     }
 
-    public void setTalla(String talla) {
+    public void setTalla(int talla) {
         this.talla = talla;
     }
+
+    
 
     public String getMaterial() {
         return material;

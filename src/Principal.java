@@ -8,12 +8,10 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author RALC
  */
-
 public class Principal extends javax.swing.JFrame {
 
     ArrayList<Personas> personas = new ArrayList();
@@ -24,9 +22,7 @@ public class Principal extends javax.swing.JFrame {
     int c_hermano;
     int c_esposo;
     String contrasena;
-    
-    
-    
+
     /**
      * Creates new form Principal
      */
@@ -271,6 +267,10 @@ public class Principal extends javax.swing.JFrame {
         cb_personas = new javax.swing.JComboBox<>();
         jb_modificar_personas = new javax.swing.JButton();
         jb_eliminar_personas = new javax.swing.JButton();
+        Modificar_Eliminar_objetos = new javax.swing.JDialog();
+        cb_objetos = new javax.swing.JComboBox<>();
+        jb_modificar_objetos = new javax.swing.JButton();
+        jb_eliminar_objetos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -1364,7 +1364,7 @@ public class Principal extends javax.swing.JFrame {
 
         sp_confort_zapatos1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
-        jb_crear_zapatos1.setText("Crear");
+        jb_crear_zapatos1.setText("Modificar");
         jb_crear_zapatos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_crear_zapatos1ActionPerformed(evt);
@@ -1529,7 +1529,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel91.setText("Material");
 
-        jb_crear_ropa1.setText("Crear");
+        jb_crear_ropa1.setText("Modificar");
         jb_crear_ropa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_crear_ropa1ActionPerformed(evt);
@@ -1632,9 +1632,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(Modificar_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel85)
                     .addComponent(tf_marca_ropa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Modificar_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel92)
-                        .addComponent(tf_pais_elaboracion_ropa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel92)
+                    .addComponent(tf_pais_elaboracion_ropa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(Modificar_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel86)
@@ -1692,7 +1691,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel102.setText("Area de casa");
 
-        jb_crear_objetos_hogar1.setText("Crear");
+        jb_crear_objetos_hogar1.setText("Modificar");
         jb_crear_objetos_hogar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_crear_objetos_hogar1ActionPerformed(evt);
@@ -1870,6 +1869,47 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(246, Short.MAX_VALUE))
         );
 
+        jb_modificar_objetos.setText("Modificar");
+        jb_modificar_objetos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_modificar_objetosActionPerformed(evt);
+            }
+        });
+
+        jb_eliminar_objetos.setText("Eliminar");
+        jb_eliminar_objetos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_eliminar_objetosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Modificar_Eliminar_objetosLayout = new javax.swing.GroupLayout(Modificar_Eliminar_objetos.getContentPane());
+        Modificar_Eliminar_objetos.getContentPane().setLayout(Modificar_Eliminar_objetosLayout);
+        Modificar_Eliminar_objetosLayout.setHorizontalGroup(
+            Modificar_Eliminar_objetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar_Eliminar_objetosLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jb_modificar_objetos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
+                .addComponent(jb_eliminar_objetos)
+                .addGap(228, 228, 228))
+            .addGroup(Modificar_Eliminar_objetosLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(cb_objetos, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Modificar_Eliminar_objetosLayout.setVerticalGroup(
+            Modificar_Eliminar_objetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar_Eliminar_objetosLayout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(cb_objetos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addGroup(Modificar_Eliminar_objetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_modificar_objetos)
+                    .addComponent(jb_eliminar_objetos))
+                .addContainerGap(246, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Principal");
@@ -1966,13 +2006,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        
+
         this.Crear_ropa.setModal(true);
         Crear_ropa.pack();
         Crear_ropa.setLocationRelativeTo(this);
         Crear_ropa.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void tf_descripcion_zapatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descripcion_zapatosActionPerformed
@@ -1993,16 +2033,15 @@ public class Principal extends javax.swing.JFrame {
         if (contrasena.equals(this.contrasena)) {
             boolean crear = false;
             String nombre = tf_nombre_familiar.getText();
-            int edad = Integer.parseInt(sp_edad_familiar.getValue()+"");
+            int edad = Integer.parseInt(sp_edad_familiar.getValue() + "");
             String sexo = (String) cb_sexo_familiar.getSelectedItem().toString();
             String estado_civil = (String) cb_estado_civil_familiar.getSelectedItem().toString();
-            String rol= (String) cb_rol_familiar.getSelectedItem().toString();
+            String rol = (String) cb_rol_familiar.getSelectedItem().toString();
             System.out.println(sexo);//prueba
             String trabajo = tf_trabajo_familiar.getText();
-            int altura = Integer.parseInt(sp_altura_familiar.getValue()+"");
-            int peso = Integer.parseInt(sp_peso_familiar.getValue()+"");
+            int altura = Integer.parseInt(sp_altura_familiar.getValue() + "");
+            int peso = Integer.parseInt(sp_peso_familiar.getValue() + "");
 
-            
             if (rol.equals("Madre")) {
                 if (c_madre != 1) {
                     crear = true;
@@ -2033,41 +2072,40 @@ public class Principal extends javax.swing.JFrame {
                     c_esposo++;
                 }
             }
-            
+
             if (crear) {
                 this.personas.add(new Familiares(rol, trabajo, altura, peso, nombre, edad, rol, sexo, estado_civil));
                 JOptionPane.showMessageDialog(this, "El Familiar ha sido creado con éxito");
                 crear = false;
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(this, "Lo lamentamos, no cumple los requesitos...\n"
                         + "El familiar no se creó");
-                
+
             }
         }
-        
+
     }//GEN-LAST:event_jb_crear_familiarActionPerformed
 
     private void cb_crear_personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_crear_personalActionPerformed
         // TODO add your handling code here:
         String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
         if (contrasena.equals(this.contrasena)) {
-            
+
             String nombre = tf_nombre_personal.getText();
-            int edad = Integer.parseInt(sp_edad_personal.getValue()+"");
+            int edad = Integer.parseInt(sp_edad_personal.getValue() + "");
             String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
             String estado_civil = (String) sp_estado_civil_personal.getSelectedItem().toString();
-            
+
             String ocupacion = tf_ocupacion_personal.getText();
             String hora_trabajo = tf_horario_de_trabajo_personal.getText();
-            int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue()+"");
-            int sueldo = Integer.parseInt(sp_sueldo_personal.getValue()+"");
-            
+            int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue() + "");
+            int sueldo = Integer.parseInt(sp_sueldo_personal.getValue() + "");
+
             this.personas.add(new Personal(ocupacion, hora_trabajo, tiempo_trabajado, sueldo, nombre, edad, sexo, sexo, estado_civil));
             JOptionPane.showMessageDialog(this, "El personal se ha creado con exito");
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_cb_crear_personalActionPerformed
 
     private void sp_estado_civil_personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sp_estado_civil_personalActionPerformed
@@ -2081,23 +2119,20 @@ public class Principal extends javax.swing.JFrame {
             String color = (String) cb_color_zapatos.getSelectedItem().toString();
             String descripcion = tf_descripcion_zapatos.getText();
             String marca = tf_marca_zapatos.getText();
-            int tamano = Integer.parseInt(sp_tamano_zapatos.getValue()+"");
-            int calidad = Integer.parseInt(sp_calidad_zapatos.getValue()+"");
-            int precio = Integer.parseInt(sp_precio_zapatos.getValue()+"");
+            int tamano = Integer.parseInt(sp_tamano_zapatos.getValue() + "");
+            int calidad = Integer.parseInt(sp_calidad_zapatos.getValue() + "");
+            int precio = Integer.parseInt(sp_precio_zapatos.getValue() + "");
             Personas persona = (Personas) cb_dueno_zapatos.getSelectedItem();
             //otros
-            int talla = Integer.parseInt(sp_talla_zapatos.getValue()+"");
+            int talla = Integer.parseInt(sp_talla_zapatos.getValue() + "");
             String tipo_suela = tf_tipo_suela_zapatos.getText();
-            int confort = Integer.parseInt(sp_confort_zapatos.getValue()+"");
-            
-            
+            int confort = Integer.parseInt(sp_confort_zapatos.getValue() + "");
+
             this.objetos.add(new Zapatos(marca, tipo_suela, confort, color, descripcion, marca, tamano, calidad, precio, persona));
             JOptionPane.showMessageDialog(this, "Los zapatos han sido creados");
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jb_crear_zapatosActionPerformed
 
     private void jb_crear_ropaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_ropaActionPerformed
@@ -2107,33 +2142,21 @@ public class Principal extends javax.swing.JFrame {
             String color = (String) cb_color_ropa.getSelectedItem().toString();
             String descripcion = tf_descripcion_ropa.getText();
             String marca = tf_marca_ropa.getText();
-            int tamano = Integer.parseInt(sp_tamano_ropa.getValue()+"");
-            int calidad = Integer.parseInt(sp_calidad_ropa.getValue()+"");
-            int precio = Integer.parseInt(sp_precio_ropa.getValue()+"");
+            int tamano = Integer.parseInt(sp_tamano_ropa.getValue() + "");
+            int calidad = Integer.parseInt(sp_calidad_ropa.getValue() + "");
+            int precio = Integer.parseInt(sp_precio_ropa.getValue() + "");
             Personas persona = (Personas) cb_dueno_ropa.getSelectedItem();
             //otros
-            int talla = Integer.parseInt(sp_talla_ropa.getValue()+"");
+            int talla = Integer.parseInt(sp_talla_ropa.getValue() + "");
             String material = tf_material_ropa.getText();
             String pais_elaboracion = tf_pais_elaboracion_ropa.getText();
-            
-            this.objetos.add(new Ropa(marca, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, persona));
+
+            this.objetos.add(new Ropa(talla, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, persona));
             JOptionPane.showMessageDialog(this, "La ropa ha sido creada con exito");
-            
-            
-        
-        
-        
-        
-        
-        
+
         }
-        
-        
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jb_crear_ropaActionPerformed
 
     private void jb_crear_objetos_hogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_objetos_hogarActionPerformed
@@ -2143,28 +2166,21 @@ public class Principal extends javax.swing.JFrame {
             String color = (String) cb_color_objetos_hogar.getSelectedItem().toString();
             String descripcion = tf_descripcion_objetos_hogar.getText();
             String marca = tf_marca_ropa.getText();
-            int tamano = Integer.parseInt(sp_tamano_objetos_hogar.getValue()+"");
-            int calidad = Integer.parseInt(sp_calidad_objetos_hogar.getValue()+"");
-            int precio = Integer.parseInt(sp_precio_objetos_hogar.getValue()+"");
+            int tamano = Integer.parseInt(sp_tamano_objetos_hogar.getValue() + "");
+            int calidad = Integer.parseInt(sp_calidad_objetos_hogar.getValue() + "");
+            int precio = Integer.parseInt(sp_precio_objetos_hogar.getValue() + "");
             Personas persona = (Personas) cb_dueno_objetos_hogar.getSelectedItem();
             //otros
-            int tiempo_vida = Integer.parseInt(sp_tiempo_vida_objetos_hogar.getValue()+"");
+            int tiempo_vida = Integer.parseInt(sp_tiempo_vida_objetos_hogar.getValue() + "");
             String area_casa = (String) cb_area_casa_objetos_hogar.getSelectedItem().toString();
             String instrucciones_armado = tf_instrucciones_armado_objetos_hogar.getText();
             String fecha_compra = tf_fecha_compra_objetos_hogar.getText();
-        
-            this.objetos.add(new Objetos_hogar(area_casa, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, persona));
-        
-        
-        
-        
-        
+
+            this.objetos.add(new Objetos_hogar(tiempo_vida, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, persona));
+
         }
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jb_crear_objetos_hogarActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -2173,9 +2189,8 @@ public class Principal extends javax.swing.JFrame {
         jd_crear_personal.pack();
         jd_crear_personal.setLocationRelativeTo(this);
         jd_crear_personal.setVisible(true);
-        
-        
-        
+
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -2184,8 +2199,8 @@ public class Principal extends javax.swing.JFrame {
         jd_crea_familiares.pack();
         jd_crea_familiares.setLocationRelativeTo(this);
         jd_crea_familiares.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -2194,78 +2209,87 @@ public class Principal extends javax.swing.JFrame {
         Crear_zapatos.pack();
         Crear_zapatos.setLocationRelativeTo(this);
         Crear_zapatos.setVisible(true);
-        
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        
+
         this.Crear_objetos_hogar.setModal(true);
         Crear_objetos_hogar.pack();
         Crear_objetos_hogar.setLocationRelativeTo(this);
         Crear_objetos_hogar.setVisible(true);
-        
+
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jb_crear_familiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_familiar1ActionPerformed
         // TODO add your handling code here:
+        String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
+        if (contrasena.equals(this.contrasena)) {
         Familiares persona = new Familiares();
         persona = (Familiares) cb_personas.getSelectedItem();
-            
-            String nombre = tf_nombre_familiar1.getText();
-            int edad = Integer.parseInt(sp_edad_familiar1.getValue()+"");
-            String sexo = (String) cb_sexo_familiar1.getSelectedItem().toString();
-            String estado_civil = (String) cb_estado_civil_familiar1.getSelectedItem().toString();
-            String rol= (String) cb_rol_familiar1.getSelectedItem().toString();
-            System.out.println(sexo);//prueba
-            String trabajo = tf_trabajo_familiar1.getText();
-            int altura = Integer.parseInt(sp_altura_familiar1.getValue()+"");
-            int peso = Integer.parseInt(sp_peso_familiar1.getValue()+"");
-            
-            persona.setEdad(edad);
-            persona.setNombre(nombre);
-            persona.setSexo(sexo);
-            persona.setEstado_civil(estado_civil);
-            persona.setRol(rol);
-            persona.setTrabajo(trabajo);
-            persona.setAltura(altura);
-            persona.setPeso(peso);
-            
-            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
-        
-        
+
+        String nombre = tf_nombre_familiar1.getText();
+        int edad = Integer.parseInt(sp_edad_familiar1.getValue() + "");
+        String sexo = (String) cb_sexo_familiar1.getSelectedItem().toString();
+        String estado_civil = (String) cb_estado_civil_familiar1.getSelectedItem().toString();
+        String rol = (String) cb_rol_familiar1.getSelectedItem().toString();
+        System.out.println(sexo);//prueba
+        String trabajo = tf_trabajo_familiar1.getText();
+        int altura = Integer.parseInt(sp_altura_familiar1.getValue() + "");
+        int peso = Integer.parseInt(sp_peso_familiar1.getValue() + "");
+
+        persona.setEdad(edad);
+        persona.setNombre(nombre);
+        persona.setSexo(sexo);
+        persona.setEstado_civil(estado_civil);
+        persona.setRol(rol);
+        persona.setTrabajo(trabajo);
+        persona.setAltura(altura);
+        persona.setPeso(peso);
+
+        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+        }
+
+
     }//GEN-LAST:event_jb_crear_familiar1ActionPerformed
 
     private void sp_estado_civil_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sp_estado_civil_personal1ActionPerformed
         // TODO add your handling code here:
+        String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
+        if (contrasena.equals(this.contrasena)) {
         Personal persona = new Personal();
-             persona = (Personal) cb_personas.getSelectedItem();
-            String nombre = tf_nombre_personal.getText();
-            int edad = Integer.parseInt(sp_edad_personal.getValue()+"");
-            String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
-            String estado_civil = (String) sp_estado_civil_personal.getSelectedItem().toString();
-            
-            String ocupacion = tf_ocupacion_personal.getText();
-            String hora_trabajo = tf_horario_de_trabajo_personal.getText();
-            int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue()+"");
-            int sueldo = Integer.parseInt(sp_sueldo_personal.getValue()+"");
-            
-             persona.setEdad(edad);
-            persona.setNombre(nombre);
-            persona.setSexo(sexo);
-            persona.setEstado_civil(estado_civil);
-            persona.setOcupacion(ocupacion);
-            persona.setHorario_trabajo(hora_trabajo);
-            persona.setTiempo_trabajando(tiempo_trabajado);
-            persona.setSuelto(sueldo);
-            
-            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
-        
-        
+        persona = (Personal) cb_personas.getSelectedItem();
+        String nombre = tf_nombre_personal.getText();
+        int edad = Integer.parseInt(sp_edad_personal.getValue() + "");
+        String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
+        String estado_civil = (String) sp_estado_civil_personal.getSelectedItem().toString();
+
+        String ocupacion = tf_ocupacion_personal.getText();
+        String hora_trabajo = tf_horario_de_trabajo_personal.getText();
+        int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue() + "");
+        int sueldo = Integer.parseInt(sp_sueldo_personal.getValue() + "");
+
+        persona.setEdad(edad);
+        persona.setNombre(nombre);
+        persona.setSexo(sexo);
+        persona.setEstado_civil(estado_civil);
+
+        persona.setOcupacion(ocupacion);
+        persona.setHorario_trabajo(hora_trabajo);
+        persona.setTiempo_trabajando(tiempo_trabajado);
+        persona.setSuelto(sueldo);
+
+        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+        }
+
+
     }//GEN-LAST:event_sp_estado_civil_personal1ActionPerformed
 
     private void cb_crear_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_crear_personal1ActionPerformed
         // TODO add your handling code here:
+
+
     }//GEN-LAST:event_cb_crear_personal1ActionPerformed
 
     private void tf_descripcion_zapatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descripcion_zapatos1ActionPerformed
@@ -2274,6 +2298,37 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crear_zapatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_zapatos1ActionPerformed
         // TODO add your handling code here:
+
+        String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
+        if (contrasena.equals(this.contrasena)) {
+        Zapatos zapato = (Zapatos) cb_objetos.getSelectedItem();
+
+        String color = (String) cb_color_zapatos1.getSelectedItem().toString();
+        String descripcion = tf_descripcion_zapatos1.getText();
+        String marca = tf_marca_zapatos1.getText();
+        int tamano = Integer.parseInt(sp_tamano_zapatos1.getValue() + "");
+        int calidad = Integer.parseInt(sp_calidad_zapatos1.getValue() + "");
+        int precio = Integer.parseInt(sp_precio_zapatos1.getValue() + "");
+        Personas persona = (Personas) cb_dueno_zapatos1.getSelectedItem();
+        //otros
+        int talla = Integer.parseInt(sp_talla_zapatos1.getValue() + "");
+        String tipo_suela = tf_tipo_suela_zapatos1.getText();
+        int confort = Integer.parseInt(sp_confort_zapatos1.getValue() + "");
+
+        zapato.setDescripcion(descripcion);
+        zapato.setMarca(marca);
+        zapato.setTamano(tamano);
+        zapato.setCalidad(calidad);
+        zapato.setPrecio(precio);
+        zapato.setDueño(persona);
+
+        zapato.setTalla(marca);
+        zapato.setTipo_suela(tipo_suela);
+        zapato.setConfort(confort);
+
+        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+        }
+
     }//GEN-LAST:event_jb_crear_zapatos1ActionPerformed
 
     private void tf_descripcion_ropa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descripcion_ropa1ActionPerformed
@@ -2282,6 +2337,34 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crear_ropa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_ropa1ActionPerformed
         // TODO add your handling code here:
+        Ropa zapato = (Ropa) cb_objetos.getSelectedItem();
+
+        String color = (String) cb_color_ropa1.getSelectedItem().toString();
+        String descripcion = tf_descripcion_ropa1.getText();
+        String marca = tf_marca_ropa1.getText();
+        int tamano = Integer.parseInt(sp_tamano_ropa1.getValue() + "");
+        int calidad = Integer.parseInt(sp_calidad_ropa1.getValue() + "");
+        int precio = Integer.parseInt(sp_precio_ropa1.getValue() + "");
+        Personas persona = (Personas) cb_dueno_ropa1.getSelectedItem();
+        //otros
+        int talla = Integer.parseInt(sp_talla_ropa1.getValue() + "");
+        String material = tf_material_ropa1.getText();
+        String pais_elaboracion = tf_pais_elaboracion_ropa1.getText();
+
+        zapato.setDescripcion(descripcion);
+        zapato.setMarca(marca);
+        zapato.setTamano(tamano);
+        zapato.setCalidad(calidad);
+        zapato.setPrecio(precio);
+        zapato.setDueño(persona);
+
+        zapato.setTalla(talla);
+        zapato.setMaterial(material);
+        zapato.setPais_elaboracion(pais_elaboracion);
+
+        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+
+
     }//GEN-LAST:event_jb_crear_ropa1ActionPerformed
 
     private void tf_descripcion_objetos_hogar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descripcion_objetos_hogar1ActionPerformed
@@ -2290,88 +2373,178 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crear_objetos_hogar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crear_objetos_hogar1ActionPerformed
         // TODO add your handling code here:
+        String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
+        if (contrasena.equals(this.contrasena)) {
+            Objetos_hogar zapato = (Objetos_hogar) cb_objetos.getSelectedItem();
+
+            String color = (String) cb_color_objetos_hogar1.getSelectedItem().toString();
+            String descripcion = tf_descripcion_objetos_hogar1.getText();
+            String marca = tf_marca_ropa1.getText();
+            int tamano = Integer.parseInt(sp_tamano_objetos_hogar1.getValue() + "");
+            int calidad = Integer.parseInt(sp_calidad_objetos_hogar1.getValue() + "");
+            int precio = Integer.parseInt(sp_precio_objetos_hogar1.getValue() + "");
+            Personas persona = (Personas) cb_dueno_objetos_hogar1.getSelectedItem();
+            //otros
+            int tiempo_vida = Integer.parseInt(sp_tiempo_vida_objetos_hogar1.getValue() + "");
+            String area_casa = (String) cb_area_casa_objetos_hogar1.getSelectedItem().toString();
+            String instrucciones_armado = tf_instrucciones_armado_objetos_hogar1.getText();
+            String fecha_compra = tf_fecha_compra_objetos_hogar1.getText();
+
+            zapato.setDescripcion(descripcion);
+            zapato.setMarca(marca);
+            zapato.setTamano(tamano);
+            zapato.setCalidad(calidad);
+            zapato.setPrecio(precio);
+            zapato.setDueño(persona);
+
+            zapato.setTiempo_vida(tiempo_vida);
+            zapato.setArea_casa(area_casa);
+            zapato.setInstrucciones_armado(instrucciones_armado);
+            zapato.setFecha_compra(fecha_compra);
+            
+            
+            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+
+        }
+        
     }//GEN-LAST:event_jb_crear_objetos_hogar1ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
-        
+
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        
-        
+
         for (Personas t : personas) {
             modelo.addElement(t);
         }
-        
+
         cb_personas.setModel(modelo);
-        
+
         this.Modificar_Eliminar_Personas.setModal(true);
         Modificar_Eliminar_Personas.pack();
         Modificar_Eliminar_Personas.setLocationRelativeTo(this);
         Modificar_Eliminar_Personas.setVisible(true);
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
         // TODO add your handling code here:
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Objetos t : objetos) {
+            modelo.addElement(t);
+        }
+
+        cb_objetos.setModel(modelo);
+
+        this.Modificar_Eliminar_objetos.setModal(true);
+        Modificar_Eliminar_objetos.pack();
+        Modificar_Eliminar_objetos.setLocationRelativeTo(this);
+        Modificar_Eliminar_objetos.setVisible(true);
+
+
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jb_modificar_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificar_personasActionPerformed
         // TODO add your handling code here:
-       
+
         if (cb_personas.getSelectedItem() instanceof Familiares) {
-            
-            
+
             this.jd_modificar_familiares.setModal(true);
-        jd_modificar_familiares.pack();
-        jd_modificar_familiares.setLocationRelativeTo(this);
-        jd_modificar_familiares.setVisible(true);
+            jd_modificar_familiares.pack();
+            jd_modificar_familiares.setLocationRelativeTo(this);
+            jd_modificar_familiares.setVisible(true);
 
-        }else{
-            
+        } else {
+
             this.jd_modificar_personal.setModal(true);
-        jd_modificar_personal.pack();
-        jd_modificar_personal.setLocationRelativeTo(this);
-        jd_modificar_personal.setVisible(true);
+            jd_modificar_personal.pack();
+            jd_modificar_personal.setLocationRelativeTo(this);
+            jd_modificar_personal.setVisible(true);
 
-            
-            
-            
         }
-        
+
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        
-        
+
         for (Personas t : personas) {
             modelo.addElement(t);
         }
-        
+
         cb_personas.setModel(modelo);
-        
-        
+
+
     }//GEN-LAST:event_jb_modificar_personasActionPerformed
 
     private void jb_eliminar_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_eliminar_personasActionPerformed
         // TODO add your handling code here:
-       
-        
-            int seleccionado = cb_personas.getSelectedIndex();
-            this.personas.remove(seleccionado);
-            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        
-        
+
+        int seleccionado = cb_personas.getSelectedIndex();
+        this.personas.remove(seleccionado);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
         for (Personas t : personas) {
             modelo.addElement(t);
         }
-        
+
         cb_personas.setModel(modelo);
-                
+
+        JOptionPane.showMessageDialog(this, "Se ha elimiando con exito");
+
+    }//GEN-LAST:event_jb_eliminar_personasActionPerformed
+
+    private void jb_modificar_objetosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificar_objetosActionPerformed
+        // TODO add your handling code here:
+        if (cb_objetos.getSelectedItem() instanceof Zapatos) {
+
+            this.Modificar_zapatos.setModal(true);
+            Modificar_zapatos.pack();
+            Modificar_zapatos.setLocationRelativeTo(this);
+            Modificar_zapatos.setVisible(true);
+
+        } else if (cb_objetos.getSelectedItem() instanceof Ropa) {
+
+            this.Modificar_ropa.setModal(true);
+            Modificar_ropa.pack();
+            Modificar_ropa.setLocationRelativeTo(this);
+            Modificar_ropa.setVisible(true);
+
+        } else {
+            this.Modificar_objetos_hogar.setModal(true);
+            Modificar_objetos_hogar.pack();
+            jd_modificar_personal.setLocationRelativeTo(this);
+            jd_modificar_personal.setVisible(true);
+
+        }
+
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+
+        cb_personas.setModel(modelo);
+
+
+    }//GEN-LAST:event_jb_modificar_objetosActionPerformed
+
+    private void jb_eliminar_objetosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_eliminar_objetosActionPerformed
+        // TODO add your handling code here:
+        int seleccionado = cb_objetos.getSelectedIndex();
+        this.objetos.remove(seleccionado);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Objetos t : objetos) {
+            modelo.addElement(t);
+        }
+
+        cb_objetos.setModel(modelo);
+
         JOptionPane.showMessageDialog(this, "Se ha elimiando con exito");
         
-    }//GEN-LAST:event_jb_eliminar_personasActionPerformed
+        
+        
+    }//GEN-LAST:event_jb_eliminar_objetosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2413,6 +2586,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog Crear_ropa;
     private javax.swing.JDialog Crear_zapatos;
     private javax.swing.JDialog Modificar_Eliminar_Personas;
+    private javax.swing.JDialog Modificar_Eliminar_objetos;
     private javax.swing.JDialog Modificar_objetos_hogar;
     private javax.swing.JDialog Modificar_ropa;
     private javax.swing.JDialog Modificar_zapatos;
@@ -2434,6 +2608,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_dueno_zapatos1;
     private javax.swing.JComboBox<String> cb_estado_civil_familiar;
     private javax.swing.JComboBox<String> cb_estado_civil_familiar1;
+    private javax.swing.JComboBox<String> cb_objetos;
     private javax.swing.JComboBox<String> cb_personas;
     private javax.swing.JComboBox<String> cb_rol_familiar;
     private javax.swing.JComboBox<String> cb_rol_familiar1;
@@ -2566,7 +2741,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_crear_ropa1;
     private javax.swing.JButton jb_crear_zapatos;
     private javax.swing.JButton jb_crear_zapatos1;
+    private javax.swing.JButton jb_eliminar_objetos;
     private javax.swing.JButton jb_eliminar_personas;
+    private javax.swing.JButton jb_modificar_objetos;
     private javax.swing.JButton jb_modificar_personas;
     private javax.swing.JDialog jd_crea_familiares;
     private javax.swing.JDialog jd_crear_personal;

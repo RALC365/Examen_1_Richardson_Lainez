@@ -2176,7 +2176,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jb_crear_zapatos1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Crear"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_crear_zapatos1ActionPerformed"/>
@@ -2310,10 +2310,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_marca_ropa1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                          <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf_pais_elaboracion_ropa1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_pais_elaboracion_ropa1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2457,7 +2455,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jb_crear_ropa1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Crear"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_crear_ropa1ActionPerformed"/>
@@ -2750,7 +2748,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jb_crear_objetos_hogar1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Crear"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_crear_objetos_hogar1ActionPerformed"/>
@@ -2840,6 +2838,64 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_eliminar_personasActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="Modificar_Eliminar_objetos">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="jb_modificar_objetos" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="261" max="32767" attributes="0"/>
+                  <Component id="jb_eliminar_objetos" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                  <Component id="cb_objetos" min="-2" pref="207" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                  <Component id="cb_objetos" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jb_modificar_objetos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_eliminar_objetos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="246" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JComboBox" name="cb_objetos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_modificar_objetos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_modificar_objetosActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_eliminar_objetos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_eliminar_objetosActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
