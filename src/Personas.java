@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_richardson_lainez;
+
 
 import java.util.ArrayList;
 
@@ -106,7 +106,7 @@ public class Personas {
 
     @Override
     public String toString() {
-        return "Personas{" + "nombre=" + nombre + ", edad=" + edad + ", id=" + id + ", sexo=" + sexo + ", estado_civil=" + estado_civil + ", mensajes=" + mensajes + '}';
+        return nombre;
     }
     
     

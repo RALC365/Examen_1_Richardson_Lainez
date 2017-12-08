@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_richardson_lainez;
+
 
 import java.util.ArrayList;
 
@@ -77,6 +77,8 @@ public class Familiares extends Personas{
     public void setPeso(int peso) {
         this.peso = peso;
     }
+    
+    
 
     public ArrayList<Objetos> getObjetos() {
         return objetos;
@@ -86,10 +88,6 @@ public class Familiares extends Personas{
         this.objetos = objetos;
     }
 
-    @Override
-    public String toString() {
-        return "Familiares{" + "rol=" + rol + ", trabajo=" + trabajo + ", altura=" + altura + ", peso=" + peso + ", objetos=" + objetos + '}';
-    }
     
     
 }

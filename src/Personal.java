@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen1_richardson_lainez;
+
 
 /**
  *
@@ -76,10 +76,6 @@ public class Personal extends Personas{
         this.suelto = suelto;
     }
 
-    @Override
-    public String toString() {
-        return "Personal{" + "ocupacion=" + ocupacion + ", horario_trabajo=" + horario_trabajo + ", tiempo_trabajando=" + tiempo_trabajando + ", suelto=" + suelto + '}';
-    }
     
     
     
