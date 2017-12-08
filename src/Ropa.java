@@ -17,7 +17,6 @@ public class Ropa extends Objetos{
     private String pais_elaboracion;
 
     public Ropa() {
-        super();
     }
 
     public Ropa(String talla, String material, String pais_elaboracion) {
@@ -26,14 +25,12 @@ public class Ropa extends Objetos{
         this.pais_elaboracion = pais_elaboracion;
     }
 
-    public Ropa(String talla, String material, String pais_elaboracion, Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+    public Ropa(String talla, String material, String pais_elaboracion, String color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
         super(color, descripcion, marca, tamano, calidad, precio, dueño);
         this.talla = talla;
         this.material = material;
         this.pais_elaboracion = pais_elaboracion;
     }
-
-    
 
     public String getTalla() {
         return talla;
@@ -63,6 +60,7 @@ public class Ropa extends Objetos{
     public String toString() {
         return "Ropa{" + "talla=" + talla + ", material=" + material + ", pais_elaboracion=" + pais_elaboracion + '}';
     }
+
     
     
 }

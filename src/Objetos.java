@@ -12,7 +12,7 @@ import java.awt.Color;
  * @author RALC
  */
 public class Objetos {
-    private Color color;
+    private String color;
     private String descripcion;
     private String marca;
     private int tamano;
@@ -23,7 +23,7 @@ public class Objetos {
     public Objetos() {
     }
 
-    public Objetos(Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+    public Objetos(String color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
         this.color = color;
         this.descripcion = descripcion;
         this.marca = marca;
@@ -33,11 +33,11 @@ public class Objetos {
         this.dueño = dueño;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -93,6 +93,9 @@ public class Objetos {
     public String toString() {
         return "Objetos{" + "color=" + color + ", descripcion=" + descripcion + ", marca=" + marca + ", tamano=" + tamano + ", calidad=" + calidad + ", precio=" + precio + ", due\u00f1o=" + dueño + '}';
     }
+
+    
+    
     
     
     

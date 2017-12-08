@@ -17,10 +17,6 @@ public class Objetos_hogar extends Objetos{
     public String instrucciones_armado;
     public String fecha_compra;
 
-    public Objetos_hogar() {
-        super();
-    }
-
     public Objetos_hogar(String tiempo_vida, String area_casa, String instrucciones_armado, String fecha_compra) {
         this.tiempo_vida = tiempo_vida;
         this.area_casa = area_casa;
@@ -28,7 +24,7 @@ public class Objetos_hogar extends Objetos{
         this.fecha_compra = fecha_compra;
     }
 
-    public Objetos_hogar(String tiempo_vida, String area_casa, String instrucciones_armado, String fecha_compra, Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+    public Objetos_hogar(String tiempo_vida, String area_casa, String instrucciones_armado, String fecha_compra, String color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
         super(color, descripcion, marca, tamano, calidad, precio, dueño);
         this.tiempo_vida = tiempo_vida;
         this.area_casa = area_casa;
@@ -36,7 +32,6 @@ public class Objetos_hogar extends Objetos{
         this.fecha_compra = fecha_compra;
     }
 
-    
     public String getTiempo_vida() {
         return tiempo_vida;
     }
@@ -73,7 +68,6 @@ public class Objetos_hogar extends Objetos{
     public String toString() {
         return "Objetos_hogar{" + "tiempo_vida=" + tiempo_vida + ", area_casa=" + area_casa + ", instrucciones_armado=" + instrucciones_armado + ", fecha_compra=" + fecha_compra + '}';
     }
-    
-    
+
     
 }
