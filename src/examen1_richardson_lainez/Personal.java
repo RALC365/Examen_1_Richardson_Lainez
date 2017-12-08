@@ -26,6 +26,24 @@ public class Personal extends Personas{
         this.suelto = suelto;
     }
 
+    public Personal(String ocupacion, String horario_trabajo, double tiempo_trabajando, double suelto, String nombre, int edad, String id, String sexo, String estado_civil) {
+        super(nombre, edad, id, sexo, estado_civil);
+        this.ocupacion = ocupacion;
+        this.horario_trabajo = horario_trabajo;
+        this.tiempo_trabajando = tiempo_trabajando;
+        this.suelto = suelto;
+    }
+
+    public Personal(String ocupacion, String horario_trabajo, double tiempo_trabajando, double suelto, String nombre, String usuario, String contrasena) {
+        super(nombre, usuario, contrasena);
+        this.ocupacion = ocupacion;
+        this.horario_trabajo = horario_trabajo;
+        this.tiempo_trabajando = tiempo_trabajando;
+        this.suelto = suelto;
+    }
+
+   
+
     public String getOcupacion() {
         return ocupacion;
     }

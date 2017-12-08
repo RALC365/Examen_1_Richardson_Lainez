@@ -5,6 +5,8 @@
  */
 package examen1_richardson_lainez;
 
+import java.awt.Color;
+
 /**
  *
  * @author RALC
@@ -23,6 +25,15 @@ public class Ropa extends Objetos{
         this.material = material;
         this.pais_elaboracion = pais_elaboracion;
     }
+
+    public Ropa(String talla, String material, String pais_elaboracion, Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+        super(color, descripcion, marca, tamano, calidad, precio, dueño);
+        this.talla = talla;
+        this.material = material;
+        this.pais_elaboracion = pais_elaboracion;
+    }
+
+    
 
     public String getTalla() {
         return talla;

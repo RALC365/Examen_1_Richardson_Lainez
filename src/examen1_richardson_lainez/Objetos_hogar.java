@@ -5,6 +5,8 @@
  */
 package examen1_richardson_lainez;
 
+import java.awt.Color;
+
 /**
  *
  * @author RALC
@@ -26,6 +28,15 @@ public class Objetos_hogar extends Objetos{
         this.fecha_compra = fecha_compra;
     }
 
+    public Objetos_hogar(String tiempo_vida, String area_casa, String instrucciones_armado, String fecha_compra, Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+        super(color, descripcion, marca, tamano, calidad, precio, dueño);
+        this.tiempo_vida = tiempo_vida;
+        this.area_casa = area_casa;
+        this.instrucciones_armado = instrucciones_armado;
+        this.fecha_compra = fecha_compra;
+    }
+
+    
     public String getTiempo_vida() {
         return tiempo_vida;
     }

@@ -17,7 +17,10 @@ public class Personas {
     private String id;
     private String sexo;
     private String estado_civil;
-    private ArrayList mensajes;
+    private String usuario;
+    private String contrasena;
+    private ArrayList mensajes = new ArrayList();
+    
 
     public Personas() {
     }
@@ -77,6 +80,29 @@ public class Personas {
     public void setMensajes(ArrayList mensajes) {
         this.mensajes = mensajes;
     }
+
+    public Personas(String nombre, String usuario, String contrasena) {
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+    
 
     @Override
     public String toString() {

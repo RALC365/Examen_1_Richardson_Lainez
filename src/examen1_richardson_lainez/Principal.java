@@ -173,6 +173,11 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
                 bt_registrarMouseClicked(evt);
             }
         });
+        bt_registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_registrarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Nombre");
@@ -995,6 +1000,7 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Ocurrio un error, no se guardaron los datos");
+            e.printStackTrace();
         }
         
         
@@ -1159,6 +1165,10 @@ static ArrayList <Objetos_hogar> objetos_hogar = new ArrayList();
     private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox7ActionPerformed
+
+    private void bt_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_registrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_registrarActionPerformed
 
     /**
      * @param args the command line arguments

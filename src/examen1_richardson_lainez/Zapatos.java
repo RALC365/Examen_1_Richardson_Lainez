@@ -5,6 +5,8 @@
  */
 package examen1_richardson_lainez;
 
+import java.awt.Color;
+
 /**
  *
  * @author RALC
@@ -23,6 +25,15 @@ public class Zapatos extends Objetos{
         this.tipo_suela = tipo_suela;
         this.confort = confort;
     }
+
+    public Zapatos(String talla, String tipo_suela, int confort, Color color, String descripcion, String marca, int tamano, int calidad, double precio, Personas dueño) {
+        super(color, descripcion, marca, tamano, calidad, precio, dueño);
+        this.talla = talla;
+        this.tipo_suela = tipo_suela;
+        this.confort = confort;
+    }
+
+    
 
     public String getTalla() {
         return talla;
