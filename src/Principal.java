@@ -2786,16 +2786,19 @@ public class Principal extends javax.swing.JFrame {
         if (personas.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
         } else {
-            this.Enviar_Mensaje.setModal(true);
-            Enviar_Mensaje.pack();
-            Enviar_Mensaje.setLocationRelativeTo(this);
-            Enviar_Mensaje.setVisible(true);
+
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Personas t : personas) {
                 modelo.addElement(t);
             }
 
-            cb_personas1.setModel(cb_personas2.getModel());
+            //cb_personas1.setModel(cb_personas.getModel());
+            cb_personas1.setModel(modelo);
+            this.Enviar_Mensaje.setModal(true);
+            Enviar_Mensaje.pack();
+            Enviar_Mensaje.setLocationRelativeTo(this);
+            Enviar_Mensaje.setVisible(true);
+
         }
 
 
@@ -2837,14 +2840,15 @@ public class Principal extends javax.swing.JFrame {
 //                System.out.println("Descifrado: " + x2);
 //                miver.setText(MiMensaje);
                 ban = 1;
-                this.mensajes++;
+                
             }
         }
         if (ban != 0) {
             Personas persona = (Personas) cb_personas1.getSelectedItem();
             persona.setMensaje(mensaje);
+            
         }
-
+this.mensajes++;
         JOptionPane.showMessageDialog(this, "El mensaje se ha enciado con éxito");
 
 
@@ -2899,21 +2903,22 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        if (this.mensajes != 0) {
+        if (this.mensajes == 0) {
+            JOptionPane.showMessageDialog(this, "Debe crear mensajes");
 
-            this.Leer_Mensaje.setModal(true);
-            Leer_Mensaje.pack();
-            Leer_Mensaje.setLocationRelativeTo(this);
-            Leer_Mensaje.setVisible(true);
+        } else {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Personas t : personas) {
                 modelo.addElement(t);
             }
 
-            cb_personas2.setModel(cb_personas2.getModel());
+            cb_personas2.setModel(modelo);
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Debe crear mensajes");
+            this.Leer_Mensaje.setModal(true);
+            Leer_Mensaje.pack();
+            Leer_Mensaje.setLocationRelativeTo(this);
+            Leer_Mensaje.setVisible(true);
+
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
@@ -2989,7 +2994,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
             if (ban != 0) {
-                Personas persona = (Personas) cb_personas1.getSelectedItem();
+                Personas persona = (Personas) cb_personas2.getSelectedItem();
                 ArrayList<String> mensajes = persona.getMensajes();
                 String bandeja = "";
                 for (String t : mensajes) {
