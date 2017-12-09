@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author RALC
  */
 public class Principal extends javax.swing.JFrame {
-
+int mensajes;
     ArrayList<Personas> personas = new ArrayList();
     ArrayList<Objetos> objetos = new ArrayList();
     int c_madre;
@@ -34,6 +34,7 @@ public class Principal extends javax.swing.JFrame {
         c_hermano = 0;
         c_esposo = 0;
         contrasena = "1";
+        mensajes = 0;
     }
 
     /**
@@ -271,6 +272,16 @@ public class Principal extends javax.swing.JFrame {
         cb_objetos = new javax.swing.JComboBox<>();
         jb_modificar_objetos = new javax.swing.JButton();
         jb_eliminar_objetos = new javax.swing.JButton();
+        Leer_Mensaje = new javax.swing.JDialog();
+        cb_personas2 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tf_leet_mensaje = new javax.swing.JTextArea();
+        jb_ver_mensajes = new javax.swing.JButton();
+        Enviar_Mensaje = new javax.swing.JDialog();
+        cb_personas1 = new javax.swing.JComboBox<>();
+        tf_enviar_mensaje = new javax.swing.JTextField();
+        jLabel105 = new javax.swing.JLabel();
+        jb_enviar_mensaje = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -284,6 +295,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         jLabel1.setText("Nombre");
 
@@ -1910,6 +1924,102 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(246, Short.MAX_VALUE))
         );
 
+        cb_personas2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_personas2ItemStateChanged(evt);
+            }
+        });
+        cb_personas2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_personas2ActionPerformed(evt);
+            }
+        });
+
+        tf_leet_mensaje.setColumns(20);
+        tf_leet_mensaje.setRows(5);
+        jScrollPane1.setViewportView(tf_leet_mensaje);
+
+        jb_ver_mensajes.setText("Ver");
+        jb_ver_mensajes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ver_mensajesActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Leer_MensajeLayout = new javax.swing.GroupLayout(Leer_Mensaje.getContentPane());
+        Leer_Mensaje.getContentPane().setLayout(Leer_MensajeLayout);
+        Leer_MensajeLayout.setHorizontalGroup(
+            Leer_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Leer_MensajeLayout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
+            .addGroup(Leer_MensajeLayout.createSequentialGroup()
+                .addGroup(Leer_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Leer_MensajeLayout.createSequentialGroup()
+                        .addGap(263, 263, 263)
+                        .addComponent(cb_personas2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Leer_MensajeLayout.createSequentialGroup()
+                        .addGap(312, 312, 312)
+                        .addComponent(jb_ver_mensajes)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Leer_MensajeLayout.setVerticalGroup(
+            Leer_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Leer_MensajeLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(cb_personas2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jb_ver_mensajes)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jLabel105.setText("Mensaje");
+
+        jb_enviar_mensaje.setText("Enviar");
+        jb_enviar_mensaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_enviar_mensajeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Enviar_MensajeLayout = new javax.swing.GroupLayout(Enviar_Mensaje.getContentPane());
+        Enviar_Mensaje.getContentPane().setLayout(Enviar_MensajeLayout);
+        Enviar_MensajeLayout.setHorizontalGroup(
+            Enviar_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Enviar_MensajeLayout.createSequentialGroup()
+                .addGap(0, 190, Short.MAX_VALUE)
+                .addComponent(tf_enviar_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(188, 188, 188))
+            .addGroup(Enviar_MensajeLayout.createSequentialGroup()
+                .addGroup(Enviar_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Enviar_MensajeLayout.createSequentialGroup()
+                        .addGap(349, 349, 349)
+                        .addComponent(jLabel105))
+                    .addGroup(Enviar_MensajeLayout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addComponent(jb_enviar_mensaje))
+                    .addGroup(Enviar_MensajeLayout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addComponent(cb_personas1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Enviar_MensajeLayout.setVerticalGroup(
+            Enviar_MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Enviar_MensajeLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(cb_personas1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel105)
+                .addGap(33, 33, 33)
+                .addComponent(tf_enviar_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jb_enviar_mensaje)
+                .addGap(56, 56, 56))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Principal");
@@ -1986,6 +2096,26 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu1.add(jMenu6);
 
+        jMenu2.setText("Mensaje");
+
+        jMenuItem1.setText("Enviar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem7.setText("Ver");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem7);
+
+        jMenu1.add(jMenu2);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -2007,10 +2137,23 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
 
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+
+        cb_dueno_ropa.setModel(modelo);
+
         this.Crear_ropa.setModal(true);
         Crear_ropa.pack();
         Crear_ropa.setLocationRelativeTo(this);
         Crear_ropa.setVisible(true);
+        }
+        
 
 
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -2128,7 +2271,10 @@ public class Principal extends javax.swing.JFrame {
             String tipo_suela = tf_tipo_suela_zapatos.getText();
             int confort = Integer.parseInt(sp_confort_zapatos.getValue() + "");
 
-            this.objetos.add(new Zapatos(marca, tipo_suela, confort, color, descripcion, marca, tamano, calidad, precio, persona));
+            Zapatos temp = new Zapatos(marca, tipo_suela, confort, color, descripcion, marca, tamano, calidad, precio, persona);
+            persona.setObjeto(temp);
+
+            this.objetos.add(temp);
             JOptionPane.showMessageDialog(this, "Los zapatos han sido creados");
         }
 
@@ -2151,7 +2297,10 @@ public class Principal extends javax.swing.JFrame {
             String material = tf_material_ropa.getText();
             String pais_elaboracion = tf_pais_elaboracion_ropa.getText();
 
-            this.objetos.add(new Ropa(talla, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, persona));
+            Ropa temp = new Ropa(talla, material, pais_elaboracion, color, descripcion, marca, tamano, calidad, precio, persona);
+            persona.setObjeto(temp);
+
+            this.objetos.add(temp);
             JOptionPane.showMessageDialog(this, "La ropa ha sido creada con exito");
 
         }
@@ -2176,7 +2325,11 @@ public class Principal extends javax.swing.JFrame {
             String instrucciones_armado = tf_instrucciones_armado_objetos_hogar.getText();
             String fecha_compra = tf_fecha_compra_objetos_hogar.getText();
 
-            this.objetos.add(new Objetos_hogar(tiempo_vida, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, persona));
+            Objetos_hogar temp = new Objetos_hogar(tiempo_vida, area_casa, instrucciones_armado, fecha_compra, color, descripcion, marca, tamano, calidad, precio, persona);
+
+            persona.setObjeto(temp);
+
+            this.objetos.add(temp);
 
         }
 
@@ -2205,20 +2358,44 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+        cb_dueno_zapatos.setModel(modelo);
+
         this.Crear_zapatos.setModal(true);
         Crear_zapatos.pack();
         Crear_zapatos.setLocationRelativeTo(this);
         Crear_zapatos.setVisible(true);
+        }
+        
 
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
+        
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+        cb_dueno_objetos_hogar.setModel(modelo);
 
         this.Crear_objetos_hogar.setModal(true);
         Crear_objetos_hogar.pack();
         Crear_objetos_hogar.setLocationRelativeTo(this);
         Crear_objetos_hogar.setVisible(true);
+        }
+        
 
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -2226,29 +2403,29 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
         if (contrasena.equals(this.contrasena)) {
-        Familiares persona = new Familiares();
-        persona = (Familiares) cb_personas.getSelectedItem();
+            Familiares persona = new Familiares();
+            persona = (Familiares) cb_personas.getSelectedItem();
 
-        String nombre = tf_nombre_familiar1.getText();
-        int edad = Integer.parseInt(sp_edad_familiar1.getValue() + "");
-        String sexo = (String) cb_sexo_familiar1.getSelectedItem().toString();
-        String estado_civil = (String) cb_estado_civil_familiar1.getSelectedItem().toString();
-        String rol = (String) cb_rol_familiar1.getSelectedItem().toString();
-        System.out.println(sexo);//prueba
-        String trabajo = tf_trabajo_familiar1.getText();
-        int altura = Integer.parseInt(sp_altura_familiar1.getValue() + "");
-        int peso = Integer.parseInt(sp_peso_familiar1.getValue() + "");
+            String nombre = tf_nombre_familiar1.getText();
+            int edad = Integer.parseInt(sp_edad_familiar1.getValue() + "");
+            String sexo = (String) cb_sexo_familiar1.getSelectedItem().toString();
+            String estado_civil = (String) cb_estado_civil_familiar1.getSelectedItem().toString();
+            String rol = (String) cb_rol_familiar1.getSelectedItem().toString();
+            System.out.println(sexo);//prueba
+            String trabajo = tf_trabajo_familiar1.getText();
+            int altura = Integer.parseInt(sp_altura_familiar1.getValue() + "");
+            int peso = Integer.parseInt(sp_peso_familiar1.getValue() + "");
 
-        persona.setEdad(edad);
-        persona.setNombre(nombre);
-        persona.setSexo(sexo);
-        persona.setEstado_civil(estado_civil);
-        persona.setRol(rol);
-        persona.setTrabajo(trabajo);
-        persona.setAltura(altura);
-        persona.setPeso(peso);
+            persona.setEdad(edad);
+            persona.setNombre(nombre);
+            persona.setSexo(sexo);
+            persona.setEstado_civil(estado_civil);
+            persona.setRol(rol);
+            persona.setTrabajo(trabajo);
+            persona.setAltura(altura);
+            persona.setPeso(peso);
 
-        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
         }
 
 
@@ -2258,29 +2435,29 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
         if (contrasena.equals(this.contrasena)) {
-        Personal persona = new Personal();
-        persona = (Personal) cb_personas.getSelectedItem();
-        String nombre = tf_nombre_personal.getText();
-        int edad = Integer.parseInt(sp_edad_personal.getValue() + "");
-        String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
-        String estado_civil = (String) sp_estado_civil_personal.getSelectedItem().toString();
+            Personal persona = new Personal();
+            persona = (Personal) cb_personas.getSelectedItem();
+            String nombre = tf_nombre_personal.getText();
+            int edad = Integer.parseInt(sp_edad_personal.getValue() + "");
+            String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
+            String estado_civil = (String) sp_estado_civil_personal.getSelectedItem().toString();
 
-        String ocupacion = tf_ocupacion_personal.getText();
-        String hora_trabajo = tf_horario_de_trabajo_personal.getText();
-        int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue() + "");
-        int sueldo = Integer.parseInt(sp_sueldo_personal.getValue() + "");
+            String ocupacion = tf_ocupacion_personal.getText();
+            String hora_trabajo = tf_horario_de_trabajo_personal.getText();
+            int tiempo_trabajado = Integer.parseInt(sp_tiempo_trabajado_personal.getValue() + "");
+            int sueldo = Integer.parseInt(sp_sueldo_personal.getValue() + "");
 
-        persona.setEdad(edad);
-        persona.setNombre(nombre);
-        persona.setSexo(sexo);
-        persona.setEstado_civil(estado_civil);
+            persona.setEdad(edad);
+            persona.setNombre(nombre);
+            persona.setSexo(sexo);
+            persona.setEstado_civil(estado_civil);
 
-        persona.setOcupacion(ocupacion);
-        persona.setHorario_trabajo(hora_trabajo);
-        persona.setTiempo_trabajando(tiempo_trabajado);
-        persona.setSuelto(sueldo);
+            persona.setOcupacion(ocupacion);
+            persona.setHorario_trabajo(hora_trabajo);
+            persona.setTiempo_trabajando(tiempo_trabajado);
+            persona.setSuelto(sueldo);
 
-        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
         }
 
 
@@ -2301,32 +2478,32 @@ public class Principal extends javax.swing.JFrame {
 
         String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
         if (contrasena.equals(this.contrasena)) {
-        Zapatos zapato = (Zapatos) cb_objetos.getSelectedItem();
+            Zapatos zapato = (Zapatos) cb_objetos.getSelectedItem();
 
-        String color = (String) cb_color_zapatos1.getSelectedItem().toString();
-        String descripcion = tf_descripcion_zapatos1.getText();
-        String marca = tf_marca_zapatos1.getText();
-        int tamano = Integer.parseInt(sp_tamano_zapatos1.getValue() + "");
-        int calidad = Integer.parseInt(sp_calidad_zapatos1.getValue() + "");
-        int precio = Integer.parseInt(sp_precio_zapatos1.getValue() + "");
-        Personas persona = (Personas) cb_dueno_zapatos1.getSelectedItem();
-        //otros
-        int talla = Integer.parseInt(sp_talla_zapatos1.getValue() + "");
-        String tipo_suela = tf_tipo_suela_zapatos1.getText();
-        int confort = Integer.parseInt(sp_confort_zapatos1.getValue() + "");
+            String color = (String) cb_color_zapatos1.getSelectedItem().toString();
+            String descripcion = tf_descripcion_zapatos1.getText();
+            String marca = tf_marca_zapatos1.getText();
+            int tamano = Integer.parseInt(sp_tamano_zapatos1.getValue() + "");
+            int calidad = Integer.parseInt(sp_calidad_zapatos1.getValue() + "");
+            int precio = Integer.parseInt(sp_precio_zapatos1.getValue() + "");
+            Personas persona = (Personas) cb_dueno_zapatos1.getSelectedItem();
+            //otros
+            int talla = Integer.parseInt(sp_talla_zapatos1.getValue() + "");
+            String tipo_suela = tf_tipo_suela_zapatos1.getText();
+            int confort = Integer.parseInt(sp_confort_zapatos1.getValue() + "");
 
-        zapato.setDescripcion(descripcion);
-        zapato.setMarca(marca);
-        zapato.setTamano(tamano);
-        zapato.setCalidad(calidad);
-        zapato.setPrecio(precio);
-        zapato.setDueño(persona);
+            zapato.setDescripcion(descripcion);
+            zapato.setMarca(marca);
+            zapato.setTamano(tamano);
+            zapato.setCalidad(calidad);
+            zapato.setPrecio(precio);
+            zapato.setDueño(persona);
 
-        zapato.setTalla(marca);
-        zapato.setTipo_suela(tipo_suela);
-        zapato.setConfort(confort);
+            zapato.setTalla(marca);
+            zapato.setTipo_suela(tipo_suela);
+            zapato.setConfort(confort);
 
-        JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
+            JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
         }
 
     }//GEN-LAST:event_jb_crear_zapatos1ActionPerformed
@@ -2401,36 +2578,48 @@ public class Principal extends javax.swing.JFrame {
             zapato.setArea_casa(area_casa);
             zapato.setInstrucciones_armado(instrucciones_armado);
             zapato.setFecha_compra(fecha_compra);
-            
-            
+
             JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
 
         }
-        
+
     }//GEN-LAST:event_jb_crear_objetos_hogar1ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
 
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
         for (Personas t : personas) {
             modelo.addElement(t);
         }
 
         cb_personas.setModel(modelo);
+        cb_personas2.setModel(modelo);
+        cb_personas1.setModel(modelo);
+        cb_dueno_zapatos.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
 
         this.Modificar_Eliminar_Personas.setModal(true);
         Modificar_Eliminar_Personas.pack();
         Modificar_Eliminar_Personas.setLocationRelativeTo(this);
         Modificar_Eliminar_Personas.setVisible(true);
+        }
+        
 
 
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
         // TODO add your handling code here:
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        if (objetos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Primero debe crear objetos");
+        }else{
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
         for (Objetos t : objetos) {
             modelo.addElement(t);
@@ -2442,6 +2631,8 @@ public class Principal extends javax.swing.JFrame {
         Modificar_Eliminar_objetos.pack();
         Modificar_Eliminar_objetos.setLocationRelativeTo(this);
         Modificar_Eliminar_objetos.setVisible(true);
+        }
+        
 
 
     }//GEN-LAST:event_jMenuItem15ActionPerformed
@@ -2449,7 +2640,10 @@ public class Principal extends javax.swing.JFrame {
     private void jb_modificar_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificar_personasActionPerformed
         // TODO add your handling code here:
 
-        if (cb_personas.getSelectedItem() instanceof Familiares) {
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            if (cb_personas.getSelectedItem() instanceof Familiares) {
 
             this.jd_modificar_familiares.setModal(true);
             jd_modificar_familiares.pack();
@@ -2472,14 +2666,31 @@ public class Principal extends javax.swing.JFrame {
         }
 
         cb_personas.setModel(modelo);
+        cb_personas2.setModel(modelo);
+        cb_personas2.setModel(modelo);
+        cb_personas1.setModel(modelo);
+        cb_dueno_zapatos.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+
+        cb_dueno_zapatos.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        }
+        
+        
+        
 
 
     }//GEN-LAST:event_jb_modificar_personasActionPerformed
 
     private void jb_eliminar_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_eliminar_personasActionPerformed
         // TODO add your handling code here:
-
-        int seleccionado = cb_personas.getSelectedIndex();
+        
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            int seleccionado = cb_personas.getSelectedIndex();
         this.personas.remove(seleccionado);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
@@ -2488,14 +2699,29 @@ public class Principal extends javax.swing.JFrame {
         }
 
         cb_personas.setModel(modelo);
+        cb_personas2.setModel(modelo);
+        cb_personas1.setModel(modelo);
+        cb_dueno_zapatos.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
 
         JOptionPane.showMessageDialog(this, "Se ha elimiando con exito");
+        }
+        
+        
+        
+
+        
 
     }//GEN-LAST:event_jb_eliminar_personasActionPerformed
 
     private void jb_modificar_objetosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificar_objetosActionPerformed
         // TODO add your handling code here:
-        if (cb_objetos.getSelectedItem() instanceof Zapatos) {
+        
+        if (objetos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear objetos antes");
+        }else{
+            if (cb_objetos.getSelectedItem() instanceof Zapatos) {
 
             this.Modificar_zapatos.setModal(true);
             Modificar_zapatos.pack();
@@ -2524,13 +2750,26 @@ public class Principal extends javax.swing.JFrame {
         }
 
         cb_personas.setModel(modelo);
+        cb_personas2.setModel(modelo);
+        cb_personas1.setModel(modelo);
+        cb_dueno_zapatos.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        cb_dueno_ropa.setModel(modelo);
+        }
+        
+        
+        
+        
 
 
     }//GEN-LAST:event_jb_modificar_objetosActionPerformed
 
     private void jb_eliminar_objetosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_eliminar_objetosActionPerformed
         // TODO add your handling code here:
-        int seleccionado = cb_objetos.getSelectedIndex();
+        if (objetos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear objetos antes");
+        }else{
+            int seleccionado = cb_objetos.getSelectedIndex();
         this.objetos.remove(seleccionado);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
@@ -2541,10 +2780,270 @@ public class Principal extends javax.swing.JFrame {
         cb_objetos.setModel(modelo);
 
         JOptionPane.showMessageDialog(this, "Se ha elimiando con exito");
+        }
         
         
         
+        
+        
+
+
     }//GEN-LAST:event_jb_eliminar_objetosActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe de crear personas antes");
+        }else{
+            this.Enviar_Mensaje.setModal(true);
+        Enviar_Mensaje.pack();
+        Enviar_Mensaje.setLocationRelativeTo(this);
+        Enviar_Mensaje.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+
+        cb_personas1.setModel(cb_personas2.getModel());
+        }
+        
+        
+
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jb_enviar_mensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_enviar_mensajeActionPerformed
+        // TODO add your handling code here:
+
+        String mensaje = tf_enviar_mensaje.getText();
+        int ban = 0;
+        if (cb_personas1.getSelectedItem() instanceof Familiares) {
+            Familiares persona1 = (Familiares) cb_personas1.getSelectedItem();
+            if (persona1.getRol().equals("Madre") || persona1.getRol().equals("Esposo")) {
+
+                System.out.println("------CIFRADOS------");
+
+                String MiMensaje = tf_enviar_mensaje.getText();
+                System.out.println("Mensaje: " + MiMensaje);
+                String x = EncriptadoCesar(MiMensaje, 3);
+                //Cifrado Cesar
+                System.out.println("Cifrado César: " + x);
+                CifradoTrans Cv = new CifradoTrans(x, "abc");
+                //Cifrado por Transpocicion del cifrado cesar de cesar
+                
+                
+                
+                
+                String Y =cifrado_trasposicion(x);
+                System.out.println("Cifrado por trasposición: " + Y);
+                //CifradoTrans cv = new CifradoTrans(Y, "abc");
+                CifrarVigenere cc = new CifrarVigenere();
+               // Cifrado Vigenere del Cifrado por Transpocicion del cifrado cesar de cesar
+                String Z = cc.Cifrar(Y);
+                System.out.println("Cifrado Vigenere: " + Z);
+                persona1.setMensaje(Z);
+                
+//                String Z1 = cc.Descifrar(Z);
+//                System.out.println("Descifrado Vigenere: " + Z1);
+//                String Y2 = cv.DesCifrar();
+//                System.out.println("Descifrado por trasposición: " + Y2);
+//                String x2 = descifradoCesar(Y2, 3);
+//                System.out.println("Descifrado: " + x2);
+//                miver.setText(MiMensaje);
+               ban = 1;
+               this.mensajes++;
+            }
+        }
+        if (ban != 0) {
+            Personas persona = (Personas) cb_personas1.getSelectedItem();
+            persona.setMensaje(mensaje);
+        }
+
+        JOptionPane.showMessageDialog(this, "El mensaje se ha enciado con éxito");
+
+
+    }//GEN-LAST:event_jb_enviar_mensajeActionPerformed
+
+    private void cb_personas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_personas2ActionPerformed
+        // TODO add your handling code here:
+
+        int ban = 0;
+        if (cb_personas1.getSelectedItem() instanceof Familiares) {
+            Familiares persona1 = (Familiares) cb_personas1.getSelectedItem();
+            if (persona1.getRol().equals("Madre") || persona1.getRol().equals("Esposo")) {
+                String mensajes = "";
+                CifrarVigenere cc = new CifrarVigenere();
+                ArrayList<String> mensajesCifrado = persona1.getMensajes();
+                for (String Z : mensajesCifrado) {
+                    String Z1 = cc.Descifrar(Z);
+                System.out.println("Descifrado Vigenere: " + Z1);
+                String Y2 = descifrado_trasposicion(Z1);
+                System.out.println("Descifrado por trasposición: " + Y2);
+                String x2 = descifradoCesar(Y2, 3);
+                System.out.println("Descifrado: " + x2);
+                mensajes += x2 + "\n";
+                }
+                tf_leet_mensaje.setText(mensajes);
+                
+
+               ban = 1;
+            }
+        }
+        if (ban != 0) {
+           Personas persona = (Personas) cb_personas1.getSelectedItem(); 
+           ArrayList<String> mensajes = persona.getMensajes();
+           String bandeja = "";
+            for (String t : mensajes) {
+                bandeja += mensajes + "\n";
+            }
+            tf_leet_mensaje.setText(bandeja);
+            
+        }
+
+
+//        tf_leet_mensaje.setText("");
+//
+//        String bandeja_texto = "";
+//        ArrayList<String> temp = ((Personas) cb_personas2.getSelectedItem()).getMensajes();
+//        for (String t : temp) {
+//            bandeja_texto += t + "\n";
+//        }
+//
+//        tf_leet_mensaje.setText(bandeja_texto);
+        
+        
+        
+
+    }//GEN-LAST:event_cb_personas2ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+if (this.mensajes != 0) {
+
+        this.Leer_Mensaje.setModal(true);
+        Leer_Mensaje.pack();
+        Leer_Mensaje.setLocationRelativeTo(this);
+        Leer_Mensaje.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Personas t : personas) {
+            modelo.addElement(t);
+        }
+
+        cb_personas2.setModel(cb_personas2.getModel());
+
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe crear mensajes");
+        }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void cb_personas2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_personas2ItemStateChanged
+        // TODO add your handling code here:
+        
+        
+        int ban = 0;
+        if (cb_personas1.getSelectedItem() instanceof Familiares) {
+            Familiares persona1 = (Familiares) cb_personas1.getSelectedItem();
+            if (persona1.getRol().equals("Madre") || persona1.getRol().equals("Esposo")) {
+                String mensajes = "";
+                CifrarVigenere cc = new CifrarVigenere();
+                ArrayList<String> mensajesCifrado = persona1.getMensajes();
+                for (String Z : mensajesCifrado) {
+                    String Z1 = cc.Descifrar(Z);
+                System.out.println("Descifrado Vigenere: " + Z1);
+                String Y2 = descifrado_trasposicion(Z1);
+                System.out.println("Descifrado por trasposición: " + Y2);
+                String x2 = descifradoCesar(Y2, 3);
+                System.out.println("Descifrado: " + x2);
+                mensajes += x2 + "\n";
+                }
+                tf_leet_mensaje.setText(mensajes);
+                
+
+               ban = 1;
+            }
+        }
+        if (ban != 0) {
+           Personas persona = (Personas) cb_personas1.getSelectedItem(); 
+           ArrayList<String> mensajes = persona.getMensajes();
+           String bandeja = "";
+            for (String t : mensajes) {
+                bandeja += mensajes + "\n";
+            }
+            tf_leet_mensaje.setText(bandeja);
+            
+        }
+
+
+//        tf_leet_mensaje.setText("");
+//
+//        String bandeja_texto = "";
+//        ArrayList<String> temp = ((Personas) cb_personas2.getSelectedItem()).getMensajes();
+//        for (String t : temp) {
+//            bandeja_texto += t + "\n";
+//        }
+//
+//        tf_leet_mensaje.setText(bandeja_texto);
+
+    }//GEN-LAST:event_cb_personas2ItemStateChanged
+
+    private void jb_ver_mensajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ver_mensajesActionPerformed
+        // TODO add your handling code here:
+        if (this.mensajes != 0) {
+            int ban = 0;
+        if (cb_personas1.getSelectedItem() instanceof Familiares) {
+            Familiares persona1 = (Familiares) cb_personas1.getSelectedItem();
+            if (persona1.getRol().equals("Madre") || persona1.getRol().equals("Esposo")) {
+                String mensajes = "";
+                CifrarVigenere cc = new CifrarVigenere();
+                ArrayList<String> mensajesCifrado = persona1.getMensajes();
+                for (String Z : mensajesCifrado) {
+                    String Z1 = cc.Descifrar(Z);
+                System.out.println("Descifrado Vigenere: " + Z1);
+                String Y2 = descifrado_trasposicion(Z1);
+                System.out.println("Descifrado por trasposición: " + Y2);
+                String x2 = descifradoCesar(Y2, 3);
+                System.out.println("Descifrado: " + x2);
+                mensajes += x2 + "\n";
+                }
+                tf_leet_mensaje.setText(mensajes);
+                
+
+               ban = 1;
+            }
+        }
+        if (ban != 0) {
+           Personas persona = (Personas) cb_personas1.getSelectedItem(); 
+           ArrayList<String> mensajes = persona.getMensajes();
+           String bandeja = "";
+            for (String t : mensajes) {
+                bandeja += mensajes + "\n";
+            }
+            tf_leet_mensaje.setText(bandeja);
+        }
+        
+        
+         
+            
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe crear mensajes");
+        }
+
+
+//        tf_leet_mensaje.setText("");
+//
+//        String bandeja_texto = "";
+//        ArrayList<String> temp = ((Personas) cb_personas2.getSelectedItem()).getMensajes();
+//        for (String t : temp) {
+//            bandeja_texto += t + "\n";
+//        }
+//
+//        tf_leet_mensaje.setText(bandeja_texto);
+        
+        
+        
+        
+    }//GEN-LAST:event_jb_ver_mensajesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2581,10 +3080,54 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
+    public String EncriptadoCesar(String msm, int Desplazamiento) {
+        StringBuilder cifrado = new StringBuilder();
+        Desplazamiento = Desplazamiento % 26;
+        for (int i = 0; i < msm.length(); i++) {
+            if (msm.charAt(i) >= 'a' && msm.charAt(i) <= 'z') {
+                if ((msm.charAt(i) + Desplazamiento) > 'z') {
+                    cifrado.append((char) (msm.charAt(i) + Desplazamiento - 26));
+                } else {
+                    cifrado.append((char) (msm.charAt(i) + Desplazamiento));
+                }
+            } else if (msm.charAt(i) >= 'A' && msm.charAt(i) <= 'Z') {
+                if ((msm.charAt(i) + Desplazamiento) > 'Z') {
+                    cifrado.append((char) (msm.charAt(i) + Desplazamiento - 26));
+                } else {
+                    cifrado.append((char) (msm.charAt(i) + Desplazamiento));
+                }
+            }
+        }
+        return cifrado.toString();
+    }
+
+    public static String descifradoCesar(String texto, int codigo) {
+        StringBuilder cifrado = new StringBuilder();
+        codigo = codigo % 26;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) >= 'a' && texto.charAt(i) <= 'z') {
+                if ((texto.charAt(i) - codigo) < 'a') {
+                    cifrado.append((char) (texto.charAt(i) - codigo + 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) - codigo));
+                }
+            } else if (texto.charAt(i) >= 'A' && texto.charAt(i) <= 'Z') {
+                if ((texto.charAt(i) - codigo) < 'A') {
+                    cifrado.append((char) (texto.charAt(i) - codigo + 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) - codigo));
+                }
+            }
+        }
+        return cifrado.toString();
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Crear_objetos_hogar;
     private javax.swing.JDialog Crear_ropa;
     private javax.swing.JDialog Crear_zapatos;
+    private javax.swing.JDialog Enviar_Mensaje;
+    private javax.swing.JDialog Leer_Mensaje;
     private javax.swing.JDialog Modificar_Eliminar_Personas;
     private javax.swing.JDialog Modificar_Eliminar_objetos;
     private javax.swing.JDialog Modificar_objetos_hogar;
@@ -2610,6 +3153,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_estado_civil_familiar1;
     private javax.swing.JComboBox<String> cb_objetos;
     private javax.swing.JComboBox<String> cb_personas;
+    private javax.swing.JComboBox<String> cb_personas1;
+    private javax.swing.JComboBox<String> cb_personas2;
     private javax.swing.JComboBox<String> cb_rol_familiar;
     private javax.swing.JComboBox<String> cb_rol_familiar1;
     private javax.swing.JComboBox<String> cb_sexo_familiar;
@@ -2623,6 +3168,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2721,11 +3267,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
@@ -2733,6 +3281,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb_crear_familiar;
     private javax.swing.JButton jb_crear_familiar1;
     private javax.swing.JButton jb_crear_objetos_hogar;
@@ -2743,8 +3293,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_crear_zapatos1;
     private javax.swing.JButton jb_eliminar_objetos;
     private javax.swing.JButton jb_eliminar_personas;
+    private javax.swing.JButton jb_enviar_mensaje;
     private javax.swing.JButton jb_modificar_objetos;
     private javax.swing.JButton jb_modificar_personas;
+    private javax.swing.JButton jb_ver_mensajes;
     private javax.swing.JDialog jd_crea_familiares;
     private javax.swing.JDialog jd_crear_personal;
     private javax.swing.JDialog jd_modificar_familiares;
@@ -2795,12 +3347,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_descripcion_ropa1;
     private javax.swing.JTextField tf_descripcion_zapatos;
     private javax.swing.JTextField tf_descripcion_zapatos1;
+    private javax.swing.JTextField tf_enviar_mensaje;
     private javax.swing.JTextField tf_fecha_compra_objetos_hogar;
     private javax.swing.JTextField tf_fecha_compra_objetos_hogar1;
     private javax.swing.JTextField tf_horario_de_trabajo_personal;
     private javax.swing.JTextField tf_horario_de_trabajo_personal1;
     private javax.swing.JTextField tf_instrucciones_armado_objetos_hogar;
     private javax.swing.JTextField tf_instrucciones_armado_objetos_hogar1;
+    private javax.swing.JTextArea tf_leet_mensaje;
     private javax.swing.JTextField tf_marca_objetos_hogar;
     private javax.swing.JTextField tf_marca_objetos_hogar1;
     private javax.swing.JTextField tf_marca_ropa;
@@ -2822,4 +3376,81 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_trabajo_familiar;
     private javax.swing.JTextField tf_trabajo_familiar1;
     // End of variables declaration//GEN-END:variables
+
+public static String cifrado_trasposicion(String x){
+        String cadenaCifrada = "";
+        x = x.toLowerCase();
+        /*ArrayList temp = new ArrayList();
+        for (int i = 0; i < x.length(); i++) {
+            if (x.charAt(i)== ' ') {
+                temp.add('ó');
+            }else{
+                temp.add(x.charAt(i));
+            }
+        }
+        int col = (temp.size()/5);
+        int pos_ac = 0;
+        for (int i = 0; i < col; i++) {
+            int pos_sen = pos_ac;
+            for (int j = pos_sen; j < pos_sen+5; j++) {
+                cadenaCifrada += temp.get(pos_ac);
+                pos_ac++;
+            }
+        }*/
+        int col = (x.length()/3)+1; //esto me dará el número de columnas
+        ban = col;
+        char [][] matriz = new char [col][col];
+        int cont = 0;
+        for (int i = 0; i < col; i++) {
+            for (int c = 0; c < col; c++) {
+                if (cont >= x.length()) {
+                    matriz[i][c] = 'á';
+                }else{
+                    if (x.charAt(cont)== ' ') {
+                        matriz[i][c] = 'é';
+                    }else{
+                        matriz[i][c] = x.charAt(cont);
+                        cont++;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < col; j++) {
+                cadenaCifrada += matriz[j][i];
+            }
+            cadenaCifrada += " ";
+        }
+        return cadenaCifrada;
+    }
+    
+    public static String descifrado_trasposicion(String x){
+        String descadenaCifrada = "";
+        x = x.toLowerCase();
+        int cont = 0;
+        char[][] matriz = new char [ban][ban]; 
+        x= x.replaceAll(" ", "");
+        for (int i = 0; i < ban; i++) {
+            for (int j = 0; j < ban; j++) {
+                //matriz[j][i] = x.charAt(cont);
+                //cont++;
+                if (x.charAt(cont) == 'é') {
+                    matriz[j][i] = ' ';
+                }else{
+                    matriz[j][i] = x.charAt(cont);
+                }                
+            }
+        }
+        for (int i = 0; i < ban; i++) {
+            for (int j = 0; j < ban; j++) {
+                if (matriz[i][j]!='á') {
+                    descadenaCifrada += matriz[i][j];
+                }
+            }
+        }
+        return descadenaCifrada;
+    }
+    static int ban;
+
+
 }
