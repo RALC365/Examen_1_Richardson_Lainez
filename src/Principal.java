@@ -872,12 +872,13 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel39)
                             .addComponent(tf_material_ropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(25, 25, 25)
-                .addGroup(Crear_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(tf_marca_ropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Crear_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Crear_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel41)
-                        .addComponent(tf_pais_elaboracion_ropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tf_pais_elaboracion_ropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Crear_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel33)
+                        .addComponent(tf_marca_ropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42)
                 .addGroup(Crear_ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
@@ -2812,25 +2813,25 @@ public class Principal extends javax.swing.JFrame {
         if (cb_personas1.getSelectedItem() instanceof Familiares) {
             Familiares persona1 = (Familiares) cb_personas1.getSelectedItem();
             if (persona1.getRol().equals("Madre") || persona1.getRol().equals("Esposo")) {
+                try {
+                    System.out.println("------CIFRADOS------");
 
-                System.out.println("------CIFRADOS------");
+                    String MiMensaje = tf_enviar_mensaje.getText();
+                    System.out.println("Mensaje: " + MiMensaje);
+                    String x = EncriptadoCesar(MiMensaje, 3);
+                    //Cifrado Cesar
+                    System.out.println("Cifrado César: " + x);
+                    CifradoTrans Cv = new CifradoTrans(x, "abc");
+                    //Cifrado por Transpocicion del cifrado cesar de cesar
 
-                String MiMensaje = tf_enviar_mensaje.getText();
-                System.out.println("Mensaje: " + MiMensaje);
-                String x = EncriptadoCesar(MiMensaje, 3);
-                //Cifrado Cesar
-                System.out.println("Cifrado César: " + x);
-                CifradoTrans Cv = new CifradoTrans(x, "abc");
-                //Cifrado por Transpocicion del cifrado cesar de cesar
-
-                String Y = cifrado_trasposicion(x);
-                System.out.println("Cifrado por trasposición: " + Y);
-                //CifradoTrans cv = new CifradoTrans(Y, "abc");
-                CifrarVigenere cc = new CifrarVigenere();
-                // Cifrado Vigenere del Cifrado por Transpocicion del cifrado cesar de cesar
-                String Z = cc.Cifrar(Y);
-                System.out.println("Cifrado Vigenere: " + Z);
-                persona1.setMensaje(Z);
+                    String Y = cifrado_trasposicion(x);
+                    System.out.println("Cifrado por trasposición: " + Y);
+                    //CifradoTrans cv = new CifradoTrans(Y, "abc");
+                    CifrarVigenere cc = new CifrarVigenere();
+                    // Cifrado Vigenere del Cifrado por Transpocicion del cifrado cesar de cesar
+                    String Z = cc.Cifrar(Y);
+                    System.out.println("Cifrado Vigenere: " + Z);
+                    persona1.setMensaje(Z);
 
 //                String Z1 = cc.Descifrar(Z);
 //                System.out.println("Descifrado Vigenere: " + Z1);
@@ -2839,16 +2840,18 @@ public class Principal extends javax.swing.JFrame {
 //                String x2 = descifradoCesar(Y2, 3);
 //                System.out.println("Descifrado: " + x2);
 //                miver.setText(MiMensaje);
-                ban = 1;
-                
+                    ban = 1;
+                } catch (Exception e) {
+
+                }
             }
         }
         if (ban != 0) {
             Personas persona = (Personas) cb_personas1.getSelectedItem();
             persona.setMensaje(mensaje);
-            
+
         }
-this.mensajes++;
+        this.mensajes++;
         JOptionPane.showMessageDialog(this, "El mensaje se ha enciado con éxito");
 
 
