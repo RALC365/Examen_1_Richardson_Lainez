@@ -19,7 +19,8 @@ public class Personas {
     private String estado_civil;
     private String usuario;
     private String contrasena;
-    private ArrayList mensajes = new ArrayList();
+    private ArrayList<String> mensajes = new ArrayList();
+    private ArrayList<Objetos> objetos = new ArrayList();
     
 
     public Personas() {
@@ -102,7 +103,12 @@ public class Personas {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
+    public void setObjeto(Objetos ob){
+        objetos.add(ob);
+    }
+    public void setMensaje(String mensa){
+        mensajes.add(mensa);
+    }
 
     @Override
     public String toString() {
