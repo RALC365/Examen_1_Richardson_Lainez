@@ -2433,10 +2433,17 @@ int mensajes;
 
     private void sp_estado_civil_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sp_estado_civil_personal1ActionPerformed
         // TODO add your handling code here:
-        String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
+        
+
+
+    }//GEN-LAST:event_sp_estado_civil_personal1ActionPerformed
+
+    private void cb_crear_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_crear_personal1ActionPerformed
+        // TODO add your handling code here:
+       String contrasena = JOptionPane.showInputDialog("Señorita Kim\nIngrese la contraseña:");
         if (contrasena.equals(this.contrasena)) {
             Personal persona = new Personal();
-            persona = (Personal) cb_personas.getSelectedItem();
+            persona = (Personal) cb_personas1.getSelectedItem();
             String nombre = tf_nombre_personal.getText();
             int edad = Integer.parseInt(sp_edad_personal.getValue() + "");
             String sexo = (String) cb_sexo_personal.getSelectedItem().toString();
@@ -2459,12 +2466,10 @@ int mensajes;
 
             JOptionPane.showMessageDialog(this, "Se ha modificado con éxito");
         }
-
-
-    }//GEN-LAST:event_sp_estado_civil_personal1ActionPerformed
-
-    private void cb_crear_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_crear_personal1ActionPerformed
-        // TODO add your handling code here:
+        
+        
+        
+        
 
 
     }//GEN-LAST:event_cb_crear_personal1ActionPerformed
